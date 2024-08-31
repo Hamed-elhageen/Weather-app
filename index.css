@@ -1,0 +1,202 @@
+body {
+    background-image: url(images/banner.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(49, 153, 171, 0.575);
+    z-index: -10;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 40px;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+@media(min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+@media(min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+@media(min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+.search {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 12px 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    width: 500px;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+.search div {
+    color: gray;
+    z-index: 5;
+}
+.search input {
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    color: gray;
+    font-size: 20px;
+}
+.search input:focus {
+    outline: none;
+}
+.search input::placeholder {
+    font-size: 18px;
+    color: gray;
+}
+.days-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 20px; /* Provides space between items */
+}
+.days-container .one, .days-container .two, .days-container .three {
+    width: 360px;
+    border-radius: 8px;
+}
+.days-container .one {
+    background-color: #3199ab;
+}
+.days-container .two, .days-container .three {
+    background-color: #83bbc4;
+    transition-duration: .5s;
+}
+.days-container .two:hover, .days-container .three:hover {
+    background-color: #3199ab;
+}
+.days-container .one .header, .days-container .two .header, .days-container .three .header {
+    color: #bfc1c8;
+    padding: 17px 25px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-size: 18px;
+}
+.days-container .one .header {
+    background-color: #374850;
+    display: flex;
+    justify-content: space-between;
+}
+.days-container .two .header, .days-container .three .header {
+    background-color: #455a64;
+    text-align: center;
+}
+.days-container .one .content, .days-container .two .content, .days-container .three .content {
+    color: white;
+    padding: 35px 25px;
+}
+.temp h2 {
+    font-size: 45px;
+    font-weight: 500;
+}
+.days-container .two .content, .days-container .three .content {
+    text-align: center;
+    padding-top: 20px;
+}
+.days-container .one .content p {
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+.days-container .one .content .show {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.days-container .one .content .show .temp {
+    display: flex;
+}
+.temp h2 {
+    font-size: 55px;
+    letter-spacing: -3px;
+}
+.status, .nextdaystatus {
+    color: #595757;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 25px 0;
+}
+.days-container .one .content .details {
+    display: flex;
+    gap: 25px;
+}
+.max-degree, .min-degree {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.max-degree {
+    font-size: 30px;
+    font-weight: 200;
+}
+.min-degree {
+    font-weight: 100;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.details > div {
+    display: flex;
+    gap: 5px;
+}
+img {
+    width: 80px;
+}
+@media(max-width:767px) {
+    body {
+        min-height: 1250px;
+    }
+    .container {
+        width: 100%; /* Full width on mobile devices */
+    }
+    .search {
+        width: 90%;
+        margin-top: 25px;
+        gap : 10px;
+    }
+    .search input {
+        margin: 0;
+        width: calc(100% - 45px); /* Adjusted for padding */
+    }
+    .days-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .days-container .one, .days-container .two, .days-container .three {
+        width: 100%; /* Full width on mobile devices */
+        max-width: none; /* Remove the max-width restriction */
+    }
+    .min-degree{
+        font-weight: 500;
+        font-size: 25px;
+
+    }
+    .max-degree{
+        font-size: 40px;
+        font-weight: 500;
+
+    }
+}
